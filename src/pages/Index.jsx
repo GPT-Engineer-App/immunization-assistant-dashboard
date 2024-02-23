@@ -126,6 +126,15 @@ const Index = () => {
               <Radio value="Extranjero">Extranjero</Radio>
             </Stack>
           </RadioGroup>
+          {!isResident && (
+            <Select placeholder="Seleccione un continente" onChange={(e) => setSelectedCountry(e.target.value)}>
+              {continents.map((continent, index) => (
+                <option key={index} value={continent}>
+                  {continent}
+                </option>
+              ))}
+            </Select>
+          )}
           <Select placeholder="Seleccione su país" onChange={(e) => setSelectedCountry(e.target.value)}>
             {countries.map((country, index) => (
               <option key={index} value={country}>
@@ -134,19 +143,15 @@ const Index = () => {
             ))}
           </Select>
           {selectedCountry === "España" && (
-            <Select placeholder="Seleccione su comunidad">
+            <Select
+              placeholder="Seleccione su comunidad"
+              onChange={(e) => {
+                /* Add onChange handler if needed */
+              }}
+            >
               {communities.map((community, index) => (
                 <option key={index} value={community}>
                   {community}
-                </option>
-              ))}
-            </Select>
-          )}
-          {!isResident && (
-            <Select placeholder="Seleccione un continente">
-              {continents.map((continent, index) => (
-                <option key={index} value={continent}>
-                  {continent}
                 </option>
               ))}
             </Select>
