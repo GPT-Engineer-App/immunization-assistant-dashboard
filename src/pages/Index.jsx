@@ -53,6 +53,7 @@ const communities = [
 
 const Index = () => {
   const [isResident, setIsResident] = useState(false);
+  const [selectedContinent, setSelectedContinent] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedProfile, setSelectedProfile] = useState("");
 
@@ -127,7 +128,7 @@ const Index = () => {
             </Stack>
           </RadioGroup>
           {!isResident && (
-            <Select placeholder="Seleccione un continente" onChange={(e) => setSelectedCountry(e.target.value)}>
+            <Select placeholder="Seleccione un continente" onChange={(e) => setSelectedContinent(e.target.value)}>
               {continents.map((continent, index) => (
                 <option key={index} value={continent}>
                   {continent}
@@ -135,14 +136,25 @@ const Index = () => {
               ))}
             </Select>
           )}
-          <Select placeholder="Seleccione su país" onChange={(e) => setSelectedCountry(e.target.value)}>
-            {countries.map((country, index) => (
-              <option key={index} value={country}>
-                {country}
-              </option>
-            ))}
+          <Select placeholder="Seleccione su país" onChange={(e) => setSelectedCountry(e.target.value)} display={selectedContinent ? "block" : "none"}>
+            {countries
+              .filter((country) => {
+                const continentCountries = {
+                  Europa: ["España", "Francia", "Alemania", "Italia", "Portugal"],
+                  América: ["Estados Unidos", "Canadá", "Brasil", "Argentina", "México"],
+                  Asia: ["China", "India", "Japón", "Tailandia", "Indonesia"],
+                  África: ["Egipto", "Sudáfrica", "Nigeria", "Kenia", "Marruecos"],
+                  Oceanía: ["Australia", "Nueva Zelanda", "Fiyi", "Papúa Nueva Guinea", "Samoa"],
+                };
+                return selectedContinent && continentCountries[selectedContinent].includes(country);
+              })
+              .map((country, index) => (
+                <option key={index} value={country}>
+                  {country}
+                </option>
+              ))}
           </Select>
-          {selectedCountry === "España" && (
+          {selectedCountry === "España" && selectedContinent === "Europa" && (
             <Select
               placeholder="Seleccione su comunidad"
               onChange={(e) => {
