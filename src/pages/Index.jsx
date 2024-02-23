@@ -71,7 +71,7 @@ const Index = () => {
           <Heading as="h1" size="xl" textAlign="center" color="black">
             Asesor de Vacunas para Profesionales de la Salud
           </Heading>
-          <Text fontSize="md" color="gray.200" textAlign="center" mt={2}>
+          <Text fontSize="md" color="black" textAlign="center" mt={2}>
             Bienvenido al Asesor de Vacunas para Profesionales de la Salud. Este servicio está diseñado para ayudar a identificar las necesidades de vacunación personalizadas para pacientes inmunocomprometidos. Por favor, proporcione la información solicitada para recibir recomendaciones específicas.
           </Text>
         </Box>
