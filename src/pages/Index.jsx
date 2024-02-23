@@ -1,7 +1,55 @@
 import { Box, Checkbox, CheckboxGroup, Container, Divider, FormControl, FormLabel, Heading, Input, Radio, RadioGroup, Select, Stack, Text, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
-const countries = ["España", "Francia", "Alemania", "Italia", "Portugal"]; // Add more countries as needed
-const communities = ["Andalucía", "Aragón", "Asturias", "Baleares", "Canarias", "Cantabria", "Castilla-La Mancha", "Castilla y León", "Cataluña", "Ceuta", "Comunidad Valenciana", "Extremadura", "Galicia", "Madrid", "Melilla", "Murcia", "Navarra", "País Vasco", "La Rioja"]; // Add more communities as needed
+const countries = [
+  "España",
+  "Francia",
+  "Alemania",
+  "Italia",
+  "Portugal", // Europa
+  "Estados Unidos",
+  "Canadá",
+  "Brasil",
+  "Argentina",
+  "México", // América
+  "China",
+  "India",
+  "Japón",
+  "Tailandia",
+  "Indonesia", // Asia
+  "Egipto",
+  "Sudáfrica",
+  "Nigeria",
+  "Kenia",
+  "Marruecos", // África
+  "Australia",
+  "Nueva Zelanda",
+  "Fiyi",
+  "Papúa Nueva Guinea",
+  "Samoa", // Oceanía
+]; // Add more countries as needed
+
+const communities = [
+  "Andalucía",
+  "Aragón",
+  "Asturias",
+  "Baleares",
+  "Canarias",
+  "Cantabria",
+  "Castilla-La Mancha",
+  "Castilla y León",
+  "Cataluña",
+  "Ceuta",
+  "Comunidad Valenciana",
+  "Extremadura",
+  "Galicia",
+  "Madrid",
+  "Melilla",
+  "Murcia",
+  "Navarra",
+  "País Vasco",
+  "La Rioja", // España
+  // Agregar comunidades de otros países de cada continente como sea necesario
+]; // Add more communities as needed
 
 const Index = () => {
   const [isResident, setIsResident] = useState(false);
