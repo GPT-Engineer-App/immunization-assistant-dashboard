@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/react";
 
 function App() {
   return (
-    <Box bg="background.100" minH="100vh">
+    <Box bg="background.200" minH="100vh">
       <Router>
         <Routes>
           <Route exact path="/" element={<Index />} />
