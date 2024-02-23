@@ -11,6 +11,7 @@ const colors = {
   },
   background: {
     50: "#ebf8ff", // soft blue for a clinical look
+    100: "#e6f5ea", // new hospital green color that is easy on the eyes
   },
 };
 
