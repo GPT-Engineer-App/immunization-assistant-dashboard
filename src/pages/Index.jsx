@@ -78,16 +78,14 @@ const Index = () => {
               <Radio value="Extranjero">Extranjero</Radio>
             </Stack>
           </RadioGroup>
-          {isResident && (
-            <Select placeholder="Seleccione su país" onChange={(e) => setSelectedCountry(e.target.value)}>
-              {countries.map((country, index) => (
-                <option key={index} value={country}>
-                  {country}
-                </option>
-              ))}
-            </Select>
-          )}
-          {isResident && selectedCountry === "España" && (
+          <Select placeholder="Seleccione su país" onChange={(e) => setSelectedCountry(e.target.value)}>
+            {countries.map((country, index) => (
+              <option key={index} value={country}>
+                {country}
+              </option>
+            ))}
+          </Select>
+          {selectedCountry === "España" && (
             <Select placeholder="Seleccione su comunidad">
               {communities.map((community, index) => (
                 <option key={index} value={community}>
