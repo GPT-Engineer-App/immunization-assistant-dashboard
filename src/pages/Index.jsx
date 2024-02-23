@@ -67,7 +67,7 @@ const Index = () => {
   return (
     <Container maxW="container.xl" p={5}>
       <VStack spacing={5}>
-        <Box bg="gray.900" p={4} rounded="md" shadow="base">
+        <Box bg="blue.100" p={4} rounded="md" shadow="base">
           <Heading as="h1" size="xl" textAlign="center" color="white">
             Asesor de Vacunas para Profesionales de la Salud
           </Heading>
