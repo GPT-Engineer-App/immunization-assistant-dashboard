@@ -67,10 +67,14 @@ const Index = () => {
   return (
     <Container maxW="container.xl" p={5}>
       <VStack spacing={5}>
-        <Heading as="h1" size="xl" textAlign="center">
-          Asesor de Vacunas para Profesionales de la Salud
-        </Heading>
-        <Text textAlign="center">Bienvenido al Asesor de Vacunas para Profesionales de la Salud. Este servicio está diseñado para ayudar a identificar las necesidades de vacunación personalizadas para pacientes inmunocomprometidos. Por favor, proporcione la información solicitada para recibir recomendaciones específicas.</Text>
+        <Box bg="gray.900" p={4} rounded="md" shadow="base">
+          <Heading as="h1" size="xl" textAlign="center" color="white">
+            Asesor de Vacunas para Profesionales de la Salud
+          </Heading>
+          <Text fontSize="md" color="gray.200" textAlign="center" mt={2}>
+            Bienvenido al Asesor de Vacunas para Profesionales de la Salud. Este servicio está diseñado para ayudar a identificar las necesidades de vacunación personalizadas para pacientes inmunocomprometidos. Por favor, proporcione la información solicitada para recibir recomendaciones específicas.
+          </Text>
+        </Box>
 
         <Divider />
 
