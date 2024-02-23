@@ -1,31 +1,61 @@
 import { Box, Checkbox, CheckboxGroup, Container, Divider, FormControl, FormLabel, Heading, Input, Radio, RadioGroup, Select, Stack, Text, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 const countries = [
+  // Europa
   "España",
   "Francia",
   "Alemania",
   "Italia",
-  "Portugal", // Europa
+  "Portugal",
+  "Reino Unido",
+  "Países Bajos",
+  "Grecia",
+  "Polonia",
+  "Suecia",
+  // América
   "Estados Unidos",
   "Canadá",
   "Brasil",
   "Argentina",
-  "México", // América
+  "México",
+  "Colombia",
+  "Chile",
+  "Perú",
+  "Venezuela",
+  "Cuba",
+  // Asia
   "China",
   "India",
   "Japón",
   "Tailandia",
-  "Indonesia", // Asia
+  "Indonesia",
+  "Corea del Sur",
+  "Filipinas",
+  "Vietnam",
+  "Malasia",
+  "Pakistán",
+  // África
   "Egipto",
   "Sudáfrica",
   "Nigeria",
   "Kenia",
-  "Marruecos", // África
+  "Marruecos",
+  "Etiopía",
+  "Ghana",
+  "Costa de Marfil",
+  "Angola",
+  "Tanzania",
+  // Oceanía
   "Australia",
   "Nueva Zelanda",
   "Fiyi",
   "Papúa Nueva Guinea",
-  "Samoa", // Oceanía
+  "Samoa",
+  "Islas Salomón",
+  "Vanuatu",
+  "Micronesia",
+  "Polinesia Francesa",
+  "Islas Marshall",
 ]; // Add more countries as needed
 
 const communities = [
