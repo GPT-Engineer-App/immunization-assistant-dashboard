@@ -55,6 +55,7 @@ const Index = () => {
   const [isResident, setIsResident] = useState(false);
   const [selectedContinent, setSelectedContinent] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedCommunity, setSelectedCommunity] = useState("");
   const [selectedProfile, setSelectedProfile] = useState("");
 
   const profiles = ["Unidad de Medicina Preventiva y Salud Pública", "Centro de Vacunación Internacional", "Gestor de Salud Pública", "Atención primaria", "Prevención de riesgos laborales", "Sociedad científica", "Industria Farmacéutica"];
@@ -136,7 +137,14 @@ const Index = () => {
               ))}
             </Select>
           )}
-          <Select placeholder="Seleccione su país" onChange={(e) => setSelectedCountry(e.target.value)} display={selectedContinent ? "block" : "none"}>
+          <Select
+            placeholder="Seleccione su país"
+            onChange={(e) => {
+              setSelectedCountry(e.target.value);
+              setSelectedCommunity(""); // Reset the selected community when a new country is selected
+            }}
+            display={selectedContinent ? "block" : "none"}
+          >
             {countries
               .filter((country) => {
                 const continentCountries = {
@@ -154,18 +162,15 @@ const Index = () => {
                 </option>
               ))}
           </Select>
-          {selectedCountry === "España" && selectedContinent === "Europa" && (
-            <Select
-              placeholder="Seleccione su comunidad"
-              onChange={(e) => {
-                /* Add onChange handler if needed */
-              }}
-            >
-              {communities.map((community, index) => (
-                <option key={index} value={community}>
-                  {community}
-                </option>
-              ))}
+          {selectedCountry && (
+            <Select placeholder="Seleccione su comunidad o estado" onChange={(e) => setSelectedCommunity(e.target.value)} display={selectedCountry && communities[selectedCountry] ? "block" : "none"}>
+              {selectedCountry &&
+                communities[selectedCountry] &&
+                communities[selectedCountry].map((community, index) => (
+                  <option key={index} value={community}>
+                    {community}
+                  </option>
+                ))}
             </Select>
           )}
         </FormControl>
